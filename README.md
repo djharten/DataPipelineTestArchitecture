@@ -86,7 +86,7 @@
     - Try changing the offset with the ```shift-by``` command. Specifically, use ```shift-by -2```. This will send the offsets of each partition back by 2. If you run the consumer again, you should get 6 messages printed, 2 for each partition.
     
 ## Making your first Kafka Program
-11. **Creating the project
+11. **Creating the project**
     - First, if you don't have IntelliJ, get it with ```brew cask install intellij-idea```
     - Open IntelliJ and click "Create New Project". On the left, we will select "Maven". Ensure the "Project SDK" is at 1.8. Click next.
     - You can name your GroupId whatever you'd like. You can set ArtifactId to whatever you'd like(ex: "kafka-introduction") and the    Version the default. Click next.
