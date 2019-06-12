@@ -85,6 +85,20 @@
     - Let's run the consumer group again for "my-first-application". You should see all the data that we have produced being read into it now. Close the consumer group and check the details on it again. The current offset and log end offset should be the same, with a lag of 0.
     - Try changing the offset with the ```shift-by``` command. Specifically, use ```shift-by -2```. This will send the offsets of each partition back by 2. If you run the consumer again, you should get 6 messages printed, 2 for each partition.
     
+## Making your first Kafka Program
+11. **Creating the project
+    - First, if you don't have IntelliJ, get it with ```brew cask install intellij-idea```
+    - Open IntelliJ and click "Create New Project". On the left, we will select "Maven". Ensure the "Project SDK" is at 1.8. Click next.
+    - You can name your GroupId whatever you'd like. You can set ArtifactId to whatever you'd like(ex: "kafka-introduction") and the    Version the default. Click next.
+    - Set the directory where this project will go wherever you like, and then click Finish.
+12. **Setting up your dependencies**
+    - Kafka requires certain dependencies to be installed to work. In your project you should see a file called "pom.xml". Open that up. This is where we will list all the dependencies for our program. Under the ```<version>``` tag create the tags ```<dependencies></dependencies>```.
+    - Go to https://mvnrepository.com/artifact/org.apache.kafka. Here there are 2 dependencies we need. The first is "kafka-clients", which should be the second option on the list. Click that, and click the latest release. Then under the "Maven" tab you will see the code for the dependency. Copy that and paste it into the ```<depedencies>``` tag in pom.xml.
+    - Now go to https://mvnrepository.com/artifact/org.slf4j/slf4j-simple and get the most stable release. Do the same thing you did in the previous step. Comment out the ```<scope>``` tag in the dependency.
+    - These dependencies need imported into the project. In the bottom right of IntelliJ you should see a popup stating that. click "Enable Auto-Import". Then go to View -> Tool Windows -> Maven and click the Refresh icon.
+    
+
+    
 ## **General CLI examples**
 - Running Zookeeper: ```zookeeper-server-start config/zookeeper.properties```
 - Running Kafka: ```kafka-server-start config/server.properties```
